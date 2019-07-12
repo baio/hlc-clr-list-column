@@ -50,6 +50,7 @@ export const getTableCellFormatMap = (datePipe: DatePipe, decimalPipe: DecimalPi
     // cls is a class to apply to cell content
     decimal: x => ({
       val: decimalPipe.transform(x),
+      // define global css style for this class inside styles.css
       cls: 'number-cell'
     })
 });

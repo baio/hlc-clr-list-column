@@ -17,6 +17,7 @@ const getTable = (formatDate: FormatDate): TableDescription => ({
             // sort column, the sort field in data provider state argument will have name equal to the column id i.e. 'title' if sort by column is requested (see Data Provider and Data Provider Config)
             sort: true,
             // cls - set class on cell content
+            // use :host ::ng-deep for styling, see table.component.css
             cls: 'title',
             // format - function to format cell value to displayed string, 
             // first arg is the cell value and second optional is the row object itself
