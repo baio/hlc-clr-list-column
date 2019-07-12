@@ -1,0 +1,8 @@
+/* Add application styles & imports to this file! */
+
+@import "@clr/ui/clr-ui.min.css";
+
+.number-cell {
+    display: initial!important;
+    text-align: right!important;
+}
