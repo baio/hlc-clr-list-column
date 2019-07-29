@@ -9,7 +9,7 @@ const capitalize = (str: string) => str[0].toUpperCase() + str.substr(1);
 type FormatDate = (s: string) => string;
 
 // Provide table UI definition in js object
-const getTable = (formatDate: FormatDate): TableDescription => ({
+const getDefinition = (formatDate: FormatDate): Table.Definition => ({
     cols: [
         {
             id: 'title',
@@ -78,15 +78,15 @@ const dataProvider: Table.Data.DataProvider = {
 
 @Component({
   selector: 'my-table',
-  template: '<hlc-clr-table [table]="table" [dataProvider]="dataProvider"></hlc-clr-table>',
+  template: '<hlc-clr-table [definition]="definition" [dataProvider]="dataProvider"></hlc-clr-table>',
   styleUrls: [ './table.component.scss' ],
   providers: [DatePipe]
 })
 export class TableComponent  {
-  readonly table: TableDescription;
+  readonly definition: Table.Definition;
   dataProvider = dataProvider;
   constructor(datePipe: DatePipe) {
     const fd: FormatDate = d => datePipe.transform(d);
-    this.table = getTable(fd);
+    this.definition = getDefinition(fd);
   }
 }
