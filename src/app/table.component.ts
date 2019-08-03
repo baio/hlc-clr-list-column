@@ -84,7 +84,7 @@ const dataProvider: Table.Data.DataProvider = {
 })
 export class TableComponent  {
   readonly definition: Table.Definition;
-  dataProvider = dataProvider;
+  readonly dataProvider = dataProvider;
   constructor(datePipe: DatePipe) {
     const fd: FormatDate = d => datePipe.transform(d);
     this.definition = getDefinition(fd);
